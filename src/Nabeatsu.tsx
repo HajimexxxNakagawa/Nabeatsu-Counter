@@ -7,8 +7,11 @@ export interface NabeatsuProps {
 const Nabeatsu: React.VFC<NabeatsuProps> = ({ isAho }) => {
   return (
     <>
-      {!isAho && <div>Nabeatsu(Normal)</div>}
-      {isAho && <div className="aho">Nabeatsu(Aho)</div>}
+      {isAho ? (
+        <div className="aho">Nabeatsu(Aho)</div>
+      ) : (
+        <div>Nabeatsu(Normal)</div>
+      )}
     </>
   );
 };
