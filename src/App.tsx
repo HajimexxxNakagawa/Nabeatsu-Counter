@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { useNabeatsu } from "./useNabeatsu";
 
 function App() {
+  const [count, countUp, isAho] = useNabeatsu();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>世界のナベアツカウンター</h1>
+      <p>{count}</p>
+      <div className="btn" onClick={countUp}>
+        Count up!
+      </div>
+      {!isAho && <div>Nabeatsu(Normal)</div>}
+      {isAho && <div className="aho">Nabeatsu(Aho)</div>}
     </div>
   );
 }
