@@ -7,14 +7,14 @@ export function useNabeatsu(): [number, () => void, boolean] {
     setCount((count) => count + 1);
   }, []);
 
-  //   初期状態
+  // 初期状態
   const initial = count === 0;
   // 3の倍数かどうかを判定
-  const isMultipleThree = count % 3 === 0;
-  //  3がつく数字かどうかを判定
+  const isMultipleOfThree = count % 3 === 0;
+  // 3がつく数字かどうかを判定
   const isNumberWithThree = Boolean(count.toString().match(/3/));
-  //   0を除き、3の倍数か3のつく数字であればtrueを返す
-  const isAho = !initial && (isMultipleThree || isNumberWithThree);
+  // 0を除き、3の倍数か3のつく数字であればtrueを返す
+  const isAho = !initial && (isMultipleOfThree || isNumberWithThree);
 
   return [count, countUp, isAho];
 }
