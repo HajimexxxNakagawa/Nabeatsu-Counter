@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { useNabeatsu } from "./useNabeatsu";
+import Nabeatsu from "./Nabeatsu";
 
 function App() {
   const [count, countUp, isAho] = useNabeatsu();
@@ -12,8 +13,7 @@ function App() {
       <div className="btn" onClick={countUp}>
         Count up!
       </div>
-      {!isAho && <div>Nabeatsu(Normal)</div>}
-      {isAho && <div className="aho">Nabeatsu(Aho)</div>}
+      <Nabeatsu isAho={isAho} />
     </div>
   );
 }
