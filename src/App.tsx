@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <h1>世界のナベアツカウンター</h1>
-      <p>{count}</p>
+      <p style={{ fontSize: `24px` }}>{count}</p>
       <div className="btn" onClick={countUp}>
         Count up!
       </div>

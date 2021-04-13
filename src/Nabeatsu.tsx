@@ -1,4 +1,6 @@
 import * as React from "react";
+import AhoNabeatsu from "./images/Aho.png";
+import NormalNabeatsu from "./images/Normal.png";
 
 export interface NabeatsuProps {
   isAho: boolean;
@@ -7,9 +9,21 @@ export interface NabeatsuProps {
 const Nabeatsu: React.VFC<NabeatsuProps> = ({ isAho }) => (
   <>
     {isAho ? (
-      <div className="aho">Nabeatsu(Aho)</div>
+      <div className="image">
+        <img
+          src={AhoNabeatsu}
+          alt="Nabeatsu(Aho)"
+          style={{ width: "100vw", maxWidth: "500px" }}
+        />
+      </div>
     ) : (
-      <div>Nabeatsu(Normal)</div>
+      <div className="image">
+        <img
+          src={NormalNabeatsu}
+          alt="Nabeatsu(Normal)"
+          style={{ width: "100vw", maxWidth: "500px" }}
+        />
+      </div>
     )}
   </>
 );
